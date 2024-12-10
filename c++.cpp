@@ -17,7 +17,9 @@ void operator << (ostream& COUT, aman& stru){
 }
 int main(){
     aman yt = aman("beautiful", 50);
-    cout << yt;
+    cout << yt;//arjun bsdk//
+    string bkl= "behen  k lawde";
+    cout <<bkl;
     cin.get();
     return 0;
 }
