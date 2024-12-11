@@ -1,26 +1,27 @@
+//linked list 
 #include<iostream>
-#include<string>
 using namespace std;
-
-struct aman{
-    string name;
-    int babu;
-    aman(string lame, int count ){
-        name=lame;
-        babu=count;
-    }
+class Node {
+    public:
+int value;
+Node* next;
 };
-// operator overloading 
-// void operator << (ostream& COUT, aman& stru){
-ostream& operator << (ostream& COUT, aman& stru){   //using as constructor
-    COUT << "Name-"<<stru.name<<endl;
-    COUT << "num "<<stru.babu<<endl;
-}
+void printlist(Node*n){
+    while(n!=NULL){
+cout<<n->value<<endl;
+n->next;
+    };
+};
 int main(){
-    aman yt = aman("beautiful", 50);
-    // cout << yt;
-    operator<<(cout , yt);//overloading the operator
-   
-    cin.get();
-    return 0;
+    Node* head = new Node();
+    Node* second = new Node();
+    Node* third = new Node();
+    head->value=1;
+    head->next=second;
+    second->value=2;
+    second->next=third;
+    third->value=4;
+    third->next=NULL;
+    printlist(head);
+    system("pause>0");
 }
