@@ -1,7 +1,7 @@
 //linked list 
 #include<iostream>
 using namespace std;
-class Node {
+struct Node {
     public:
 int value;
 Node* next;
@@ -20,6 +20,7 @@ newnode->next=*head;
 };
 void insertatend(Node**head,int newvalue){
 Node* newnode = new Node();
+newnode->next=NULL;
 newnode->value=newvalue;
 if(*head ==NULL){
     *head=newnode;
@@ -27,19 +28,26 @@ if(*head ==NULL){
 Node* last=*head;
 while(last->next!=NULL){
     last=last->next;
-}
+};
 last->next=newnode;
 };
 void insertafter(Node*previous,int newvalue){
+    Node* newnode = new Node();
 if(previous==NULL){
     cout<<"it can\'t be that" ;
-}
-Node* newnode = new Node();
+};
 newnode->value=newvalue;
 newnode->next=previous->next;
 previous->next=newnode;
-}
-
+};
+void deletenode(Node** head,int position){
+    Node* temp=*head;
+if (position==1){
+    *head=temp->next;
+delete temp;
+return;
+};
+};
 int main(){
     Node* head = new Node();
     Node* expe = new Node();
@@ -56,8 +64,8 @@ int main(){
     insertatfront(&head , 5);
     insertatend(&head,-2);
     insertafter(third,5);
-    // deletenode(&head,1);
+    deletenode(&head,1);
     printlist(head);
     
     system("pause>0");
-}
+};
