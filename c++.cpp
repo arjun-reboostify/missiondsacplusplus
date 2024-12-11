@@ -39,19 +39,38 @@ newnode->value=newvalue;
 newnode->next=previous->next;
 previous->next=newnode;
 }
+// void deletenode(Node**head ,int position){
+//     Node* temp=*head;
+//     Node* newnode=new Node();
+//     if (position==1){
+//        *head=temp->next;
+//        delete *head;
+//        *head=NULL;
+//     }
+// // Node* temp=deletingthatnode;
+// // // while(temp->next->value=NULL){
+// // // cout<<"can\'t do it";
+// // // }
+// // deletingthatnode=deletingthatnode->next;
+// // delete temp;
+// }
 int main(){
     Node* head = new Node();
+    Node* expe = new Node();
     Node* second = new Node();
     Node* third = new Node();
     head->value=1;
-    head->next=second;
+    head->next=expe;
+    expe->value=90;
+    expe->next=second;
     second->value=2;
     second->next=third;
     third->value=4;
     third->next=NULL;
     insertatfront(&head , 5);
     insertatend(&head,-2);
-    insertafter(second,5);
+    insertafter(third,5);
+    // deletenode(&head,1);
     printlist(head);
     
     system("pause>0");
