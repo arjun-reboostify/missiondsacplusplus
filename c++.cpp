@@ -39,21 +39,7 @@ newnode->value=newvalue;
 newnode->next=previous->next;
 previous->next=newnode;
 }
-// void deletenode(Node**head ,int position){
-//     Node* temp=*head;
-//     Node* newnode=new Node();
-//     if (position==1){
-//        *head=temp->next;
-//        delete *head;
-//        *head=NULL;
-//     }
-// // Node* temp=deletingthatnode;
-// // // while(temp->next->value=NULL){
-// // // cout<<"can\'t do it";
-// // // }
-// // deletingthatnode=deletingthatnode->next;
-// // delete temp;
-// }
+
 int main(){
     Node* head = new Node();
     Node* expe = new Node();
